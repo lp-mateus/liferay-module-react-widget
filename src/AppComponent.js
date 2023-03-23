@@ -3,6 +3,7 @@ import { createHashRouter, RouterProvider } from "react-router-dom";
 
 // Pages
 import PageHome from './pages/PageHome';
+import PageCadastro from './pages/PageCadastro';
 import PageDashboard from './pages/PageDashboard';
 
 export default function AppComponent(props) {
@@ -24,6 +25,11 @@ export default function AppComponent(props) {
 		{
 			path: "/dashboard",
 			element: <PageDashboard {...liferayProps} />,
+			errorElement: <h1>404 - NOT FOUND</h1>,
+		},
+		{
+			path: "/cadastro",
+			element: <PageCadastro {...liferayProps} />,
 			errorElement: <h1>404 - NOT FOUND</h1>,
 		},
 	]);

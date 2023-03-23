@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import store from './store';
 
+// App
 import AppComponent from './AppComponent';
 
 /**
@@ -14,12 +17,14 @@ import AppComponent from './AppComponent';
  */
 export default function main(params) { 
 	 ReactDOM.render(
-		<AppComponent 
-			portletNamespace={params.portletNamespace} 
-			contextPath={params.contextPath}
-			portletElementId={params.portletElementId}
-			configuration={params.configuration}
-		 />, 
+		<Provider store={store}>
+			<AppComponent 
+				portletNamespace={params.portletNamespace} 
+				contextPath={params.contextPath}
+				portletElementId={params.portletElementId}
+				configuration={params.configuration}
+			/>
+		 </Provider>, 
 		document.getElementById(params.portletElementId)
 	);
 }
