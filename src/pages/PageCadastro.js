@@ -9,22 +9,23 @@ const PageCadastro = () => {
 
   return (
     <>
-    <main>
-        <h1>Cadastro</h1>
-        <h3>Formulário do usuário</h3>
-        <Form />
-    </main>
-    
-    {user.map((element) => 
-      <div>
-        <hr></hr>
-        <h5>Usuário</h5>
-        <p>Nome: {element.nome}</p>
-        <p>E-mail: {element.email}</p>
-        <p>Telefone: {element.telefone}</p>
-        <hr></hr>
+    <main className="container text-center">
+      <div className="col">
+      <h1>Cadastro</h1>
+      <h3>Formulário do usuário</h3>
+      <Form />
+      {user.map((element) => 
+        <div>
+          <hr></hr>
+          <h5>Usuário</h5>
+          <p>Nome: {element.nome}</p>
+          <p>E-mail: {element.email}</p>
+          <p>Telefone: {element.telefone}</p>
+          <hr></hr>
+        </div>
+      )}
       </div>
-    )}
+    </main>
     </>
   );
 };

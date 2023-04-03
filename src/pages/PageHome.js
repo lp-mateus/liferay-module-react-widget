@@ -9,19 +9,25 @@ const TEXT = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do ei
 
 const PageHome = () => {
   return (
-    <main>
+    <main className="container text-center">
         <h1>Sistema Liferay</h1>
         <h3>Projeto - Widget - React</h3>
         <h5>Author: @MateusLeitePedrosa</h5>
         <p>{TEXT}</p>
-        <Link to="/dashboard">
-            <Button text="VISUALIZAR" />
-        </Link>
-        <br></br>
-        <Link to="/cadastro">
-            <Button text="CADASTRAR" />
-        </Link>
-        
+        <nav className="container text-center">
+          <div className="row align-items-start">
+            <div className="col">
+              <Link to="/cadastro">
+                <Button text="CADASTRAR" />
+              </Link>
+            </div>
+            <div className="col">
+              <Link to="/dashboard">
+                <Button text="VISUALIZAR" />
+              </Link>
+            </div>
+          </div>
+        </nav>
     </main>
   );
 };

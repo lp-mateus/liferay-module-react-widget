@@ -1,13 +1,21 @@
+// REACT
 import React from "react";
 import { useState } from "react";
+
+// REDUX
 import { useDispatch } from 'react-redux';
 import { addUser } from "../features/formUserSlice";
+
+// COMPONENTS
+import ButtonDanger from "./ButtonDanger";
+import AlertSuccess from "./AlertSuccess";
 
 const Form = () => {
     // react state do formulario
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
+    const [alert, setAlert] = useState(false);
     const dispatch = useDispatch();
 
     // metodo submit do formulario
@@ -26,11 +34,12 @@ const Form = () => {
         dispatch(addUser(payload));
 
         // mensagem
-        alert("Sucesso!");
+        setAlert(true);
     }
 
     return (
     <>
+    {alert ? <AlertSuccess text="Sucesso - Usuário salvo!" /> : null}
     <form id="form-user" onSubmit={handleSubmit}>
         <div>
             <label>Nome:</label>
@@ -60,11 +69,12 @@ const Form = () => {
         </div>
     </form>
     <br></br>
-    <button
-        type="submit" 
+    <ButtonDanger
         form="form-user"
-        text="Enviar" 
-    >Cadastro</button>
+        type="submit"
+        text="Salvar"
+    >
+    </ButtonDanger>
     </>
     );
 };

@@ -15,18 +15,20 @@ const Card = () => {
     
     // return
     return (
-    <section>
+    <>
     {data.map((element) => 
-        <div>
-            <h5>Usuário</h5>
-            <p>ID: {element.id}</p>
-            <p>SITE: {element.website}</p>
-            <p>NOME: {element.name}</p>
-            <p>TELEFONE: {element.phone}</p>
-            <p>EMAIL: {element.email}</p>
-        </div>
-    )}
+    <section className="card text-start">
+    <div className="card-body">
+        <h5 className="card-title">Usuário</h5>
+        <p className="card-text">ID: {element.id}</p>
+        <p className="card-text">SITE: {element.website}</p>
+        <p className="card-text">NOME: {element.name}</p>
+        <p className="card-text">TELEFONE: {element.phone}</p>
+        <p className="card-text">EMAIL: {element.email}</p>
+    </div>
     </section>
+    )}
+    </>
   );
 };
 
